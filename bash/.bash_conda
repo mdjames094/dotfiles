@@ -1,0 +1,36 @@
+
+# Conda
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/djames/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/djames/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/djames/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/djames/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+#### Section Initially in .bash_profile retrieved here
+#### in order to call .bashrc from .bash_profile without cycling
+#### allowing to avoid tmux error at launch regarding prompt issues
+function conda_auto_env() {
+  if [ -e "environment.yaml" ]; then
+    ENV_NAME=$(head -n 1 environment.yaml | cut -f2 -d ' ')
+    # Check if you are already in the environment
+    if [[ $CONDA_PREFIX != *$ENV_NAME* ]]; then
+      # Try to activate environment
+      conda activate $ENV_NAME &>/dev/null
+    fi
+  fi
+}
+
+
+export PROMPT_COMMAND="conda_auto_env;$PROMPT_COMMAND"
+

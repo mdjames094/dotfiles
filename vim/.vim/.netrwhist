@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/djames/.cache'
+let g:netrw_dirhist_2='/home/djames/.cache/fontconfig'
+let g:netrw_dirhist_3='/home/djames'
+let g:netrw_dirhist_4='/home/djames/Downloads'
+let g:netrw_dirhist_5='/home/djames/Downloads/Vim_Tmux'
+let g:netrw_dirhist_6='/home/djames/Downloads/Vim_Tmux/workshop'
+let g:netrw_dirhist_7='/home/djames/Downloads'

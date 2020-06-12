@@ -1,0 +1,60 @@
+# Prompt
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+function git-branch-name
+{
+    echo $(git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+}
+
+function git-dirty {
+    st=$(git status 2>/dev/null | tail -n 1)
+    if [[ $st != "nothing to commit (working directory clean)" ]]
+    then
+        echo "*"
+    fi
+}
+
+function git-unpushed {
+    brinfo=$(git branch -v | grep git-branch-name)
+    if [[ $brinfo =~ ("[ahead "([[:digit:]]*)]) ]]
+    then
+        echo "(${BASH_REMATCH[2]})"
+    fi
+}
+
+function gitify {
+    status=$(git status 2>/dev/null | tail -n 1)
+    if [[ $status == "" ]]
+    then
+        echo ""
+    else
+        echo $(git-branch-name)$(git-dirty)$(git-unpushed)
+    fi
+}
+
+GRAY="\[\033[00;37m\]"
+RED="\[\033[00;31m\]"
+GREEN="\[\033[00;32m\]"
+ORAN="\[\033[00;33m\]"
+BLUE="\[\033[00;96m\]"
+NOCOL="\[\033[0m\]"
+DASH="\342\224\200"
+SQUARE="\342\225\274"
+CROSS="\342\234\227"
+LD="\342\224\214"
+DR="\342\224\224"
+LAB_A="\$([[ \$? != 0 ]] && echo \"[${RED}${CROSS}${GRAY}]${DASH}\")"
+USERNAME="$(if [[ ${EUID} == 0 ]]; then echo "${RED}"; else echo "${ORAN}\u${GRAY}${BLUE} "; fi)"
+
+PS1="${GRAY}${LD}${DASH}"
+# PS1+="${LAB_A}"
+PS1+="[${USERNAME}${GRAY}]"
+PS1+="${DASH}[${GREEN}\w${GRAY}] " 
+# PS1+="\$(parse_git_branch)"
+PS1+="\$(gitify)"
+PS1+="\n${GRAY}${DR}${DASH}${DASH}${SQUARE} ${NOCOL}"
+
+
