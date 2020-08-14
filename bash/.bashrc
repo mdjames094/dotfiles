@@ -54,4 +54,18 @@ bind -x '"\C-t": printf "\033c"'
 export HISTCONTROL=IGNORESPACE
 
 
+# tldr
+complete -W "$(tldr 2>/dev/null --list)" tldr
+export TLDR_HEADER='magenta bold underline'
+export TLDR_QUOTE='italic'
+export TLDR_DESCRIPTION='green'
+export TLDR_CODE='darkgreen'
+export TLDR_PARAM='white'
+
+
+# set PATH so it includes user's scripts folder if it exists
+if [ -d "$HOME/Documents/Scripts" ] ; then
+    PATH="$PATH:$HOME/Documents/Scripts"
+    export PATH
+fi
 

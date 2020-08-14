@@ -34,6 +34,10 @@ Plugin 'tyru/open-browser.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jpalardy/vim-slime'
 Plugin 'hanschen/vim-ipython-cell'
+Plugin 'goerz/jupytext.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'christoomey/vim-system-copy'
+Plugin 'ReplaceWithRegister'
 
 call vundle#end()            
 " }}}
@@ -93,6 +97,13 @@ set encoding=utf8
 
 set hidden
 
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 "}}}
 
 
@@ -106,7 +117,8 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_filetype_whitelist = { "c":1, "cpp":1, "objc":1, "sh":1, "zsh":1, "zimbu":1, "python":1, }
 
 " change indent char - display lines
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['|']
 
 " shortcut for goto definition
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -127,6 +139,11 @@ let g:slime_default_config = {
             \ 'target_pane': '{top-right}' }
 let g:slime_dont_ask_default = 1
 let g:ipython_cell_delimit_cells_by = 'tags'
+let g:slime_no_mappings = 1
+
+" jupytext
+let g:jupytext_fmt = 'py'
+" let g:jupytext_filetype_map = {'py': 'python'}
 
 " set surf browser for Plantuml preview
 " let g:openbrowser_browser_commands = [{'name': 'surf', 'args': ['surf', '{use_vimproc ? uri : uri_noesc}']}]
@@ -144,18 +161,23 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 " Map F3 and F4 to toggle on an off the line and relative line numbers in Normal mode
-nmap <F3> :set nu! <CR>
-nmap <F4> :set rnu! <CR>
+" nmap <F3> :set nu!
+" nmap <F4> :set rnu!
 
 " Vimux commands
 nmap <F5> :call VimuxRunCommand("clear; python3 " . expand("%:p"))<CR><CR>
 
+
 " Save and run script
 autocmd FileType python nnoremap <buffer> <F6> :w<CR>:IPythonCellRun<CR>
 autocmd FileType python inoremap <buffer> <F6> <C-o>:w<CR><C-o>:IPythonCellRun<CR>
+
 " Evaluate current cell without saving
-autocmd FileType python nnoremap <buffer> <F7> :IPythonCellExecuteCell<CR>
-autocmd FileType python inoremap <buffer> <F7> <C-o>:IPythonCellExecuteCell<CR>
+" autocmd FileType python nnoremap <buffer> <F7> :IPythonCellExecuteCell<CR>
+" autocmd FileType python inoremap <buffer> <F7> <C-o>:IPythonCellExecuteCell<CR>
+autocmd FileType python nmap <buffer> <F7> :SlimeSendCurrentLine<CR>:<C-u>call search('^.\+')<CR>
+autocmd FileType python xmap <buffer> <F7> <Plug>SlimeRegionSend<Esc>`>a<ESC>gjg0
+
 " Evaluate current cell and jump to next cell without saving
 autocmd FileType python nnoremap <buffer> <F8> :IPythonCellExecuteCellJump<CR>
 autocmd FileType python inoremap <buffer> <F8> <C-o>:IPythonCellExecuteCellJump<CR>
