@@ -1,0 +1,11 @@
+{
+	"bookmarks" : "/home/djames/.config/radiotray-ng/bookmarks.json",
+	"compact-menu" : false,
+	"last-station" : "Jupiter Broadcasting",
+	"last-station-group" : "Community",
+	"last-station-notifications" : true,
+	"notification-verbose" : false,
+	"notifications" : false,
+	"split-title" : true,
+	"volume-level" : 100
+}

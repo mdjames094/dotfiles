@@ -1,0 +1,75 @@
+#!/bin/bash
+
+GRAY="\[\033[00;37m\]"
+RED="\[\033[00;31m\]"
+GREEN="\[\033[00;32m\]"
+ORAN="\[\033[00;33m\]"
+BLUE="\[\033[00;96m\]"
+NOCOL="\[\033[0m\]"
+DASH="\342\224\200"
+SQUARE="\342\225\274"
+CROSS="\342\234\227"
+LD="\342\224\214"
+DR="\342\224\224"
+
+prompt_git() {
+	local s='';
+	local branchName='';
+
+	# Check if the current directory is in a Git repository.
+	if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
+
+		# check if the current directory is in .git before running git checks
+		if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+
+			# Ensure the index is up to date.
+			git update-index --really-refresh -q &>/dev/null;
+
+			# Check for uncommitted changes in the index.
+			if ! $(git diff --quiet --ignore-submodules --cached); then
+				s+='+';
+			fi;
+
+			# Check for unstaged changes.
+			if ! $(git diff-files --quiet --ignore-submodules --); then
+				s+='!';
+			fi;
+
+			# Check for untracked files.
+			if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+				s+='?';
+			fi;
+
+			# Check for stashed files.
+			if $(git rev-parse --verify refs/stash &>/dev/null); then
+				s+='$';
+			fi;
+
+		fi;
+
+		# Get the short symbolic ref.
+		# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+		# Otherwise, just give up.
+		branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+			git rev-parse --short HEAD 2> /dev/null || \
+			echo '(unknown)')";
+
+		[ -n "${s}" ] && s=" [${s}]";
+
+		echo -e "${1}${branchName}${2}\033[00;96m${s}";
+	else
+		return;
+	fi;
+}
+
+
+LAB_A="\$([[ \$? != 0 ]] && echo \"[${RED}${CROSS}${GRAY}]${DASH}\")"
+USERNAME="$(if [[ ${EUID} == 0 ]]; then echo "${RED}"; else echo "${ORAN}\u${GRAY}${BLUE} "; fi)"
+
+PS1="${GRAY}${LD}${DASH}"
+PS1+="[${USERNAME}${GRAY}]"
+PS1+="${DASH}[${GREEN}\w${GRAY}] " 
+PS1+="\$(prompt_git)";
+PS1+="\n${GRAY}${DR}${DASH}${DASH}${SQUARE} ${NOCOL}"
+
+

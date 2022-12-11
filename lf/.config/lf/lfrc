@@ -1,0 +1,149 @@
+set shell bash
+set shellopts '-eu'
+set ifs "\n"
+
+set ignorecase
+set icons
+set info size
+
+set promptfmt "
+\033[38;5;8m\033[48;5;236m %w/ \033[38;5;236m\033[48;5;234m
+\033[38;5;8m\033[48;5;234m %f \033[0m\033[38;5;234m\033[0m
+"
+
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+cmd paste &{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    case "$mode" in
+        copy)
+            rsync -av --ignore-existing --progress -- "$@" . |
+            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+            while IFS= read -r line; do
+               lf -remote "send $id echo $line"
+            done
+            ;;
+        move) mv -n -- "$@" .;;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+}}
+
+cmd z ${{
+	set +u
+	dest=''
+	prefix=''
+	[[ "$OSTYPE" == "darwin"* ]] && prefix='/usr/local'
+	if hash zoxide 2>/dev/null; then
+		dest="$(zoxide query "$@")"
+	# See: https://github.com/skywind3000/z.lua
+	elif [ -f "$prefix/etc/profile.d/z.lua" ]; then
+		export _ZL_NO_PROMPT_COMMAND=1
+		dest="$(lua "$prefix/etc/profile.d/z.lua" -e "$@")"
+	# See https://github.com/rupa/z
+	elif [ -f "$prefix/etc/profile.d/z.sh" ] || [ -f "$prefix/share/z/z.sh"]; then
+		export _Z_NO_PROMPT_COMMAND=1
+		source "$prefix/etc/profile.d/z.sh" || source "$prefix/share/z/z.sh"
+		dest="$(_z "$@" && pwd)"
+	fi
+
+	if test -n "${dest}"; then
+		lf -remote "send $id cd '${dest}'"
+	else
+		lf -remote "send $id echo 'Invalid directory ${dest}'"
+	fi
+}}
+
+cmd fzf_z ${{
+	sel="$(zoxide query -l | fzf +s)"
+	[ -d "$sel" ] && lf -remote "send $id cd \"$sel\""
+}}
+
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+# Trash cli bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    # extract the substring from start of string up to delimiter.
+    # this is the first "element" of the string.
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    # if there's only one element left, set `files` to an empty string.
+    # this causes us to exit this `while` loop.
+    # else, we delete the first "element" of the string from files, and move onto the next.
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd clear_trash %trash-empty
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+cmd zip %zip -r "$f" "$f"
+cmd tar %tar cvf "$f.tar" "$f"
+cmd targz %tar cvzf "$f.tar.gz" "$f"
+cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
+
+cmd dragon-out %dragon -a -x "$fx"
+cmd dragon-multiple %dragon -a $fx
+
+map m
+map d
+map t
+
+map x cut
+map r rename
+map y copy
+map p paste
+map dd delete
+
+map di dragon-out
+map dm dragon-multiple
+
+map zp set preview!                                                                                
+
+map md push %mkdir<space>
+map mf push %touch<space>
+map mu !du -hsx * | sort -rh | less
+
+map az zip
+map at tar
+map ag targz
+map ab targz
+map au unarchive
+
+map tt trash
+map tc clear_trash
+map tr restore_trash
+
+map gh cd ~/
+map gd cd ~/Documents/
+map gl cd ~/Downloads/
+map gt cd ~/.local/share/Trash/files
+
+map zz push :z<space>
+
+# Quickly locate a file with fzf and select it in lf
+map gf $lf -remote "send $id select $(fzf)"
+

@@ -1,0 +1,23 @@
+set previewer ~/.config/lf/lfyt/pv
+set cleaner ~/.config/lf/lfyt/cls
+set ratios 3:4
+
+cmd open ${{
+  set --
+  for file in $fx; do
+    set -- "$@" "https://youtu.be/$(basename -- "$file" | cut -d: -f1)"
+  done
+  set +u
+  if [ -n "$DISPLAY" ]; then
+    exec setsid -f -- mpv -- "$@" </dev/null 1>&0 2>&0
+  else
+    exec mpv -- "$@"
+  fi
+}}
+map <enter> open
+
+map d ${{
+  mkdir -p "$HOME/Downloads/ytDownloads"
+  cd "$HOME/Downloads/ytDownloads"
+  exec setsid -f -- youtube-dl -- $(basename -a -- $fx | cut -d: -f1)
+}}

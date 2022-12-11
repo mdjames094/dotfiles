@@ -1,0 +1,43 @@
+{
+    "control": [
+        { "VTOY_MAX_SEARCH_LEVEL": "0" },
+        { "VTOY_DEFAULT_SEARCH_ROOT": "/ISO" }
+    ],
+    "theme": {
+        "file": "/ventoy/poly-dark/theme.txt",
+        "gfxmode": "1024x768x24",
+        "display_mode": "CLI",
+        "ventoy_left": "5%",
+        "ventoy_top": "95%",
+        "ventoy_color": "#0000ff",
+        "fonts": [
+            "/Ventoy/poly-dark/unifont-regular-16.pf2"
+        ]
+    },
+    "menu_alias": [
+        {
+            "image": "/1_Hiren_Boot_CD_PE.iso",
+            "alias": "Hiren Boot CD PE"
+        },
+        {
+            "image": "/2_Clonezilla.iso",
+            "alias": "Clonezilla"
+        },
+        {
+            "image": "/3_GPparted.iso",
+            "alias": "GPparted"
+        },        
+        {
+            "image": "/4_Super_Grub2_Disk.iso",
+            "alias": "Super Grub2 Disk"
+        },
+        {
+            "image": "/5_Rescatux.iso",
+            "alias": "Rescatux"
+        },
+        {
+            "image": "/6_System_Rescue_CD.iso",
+            "alias": "System Rescue CD"
+        }
+    ]
+}

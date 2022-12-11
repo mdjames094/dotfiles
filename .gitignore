@@ -1,0 +1,18 @@
+*.log
+
+.bash_history
+
+[Tt]humbs.db
+
+*.DS_Store
+
+reset_git_repo.sh
+
+# NERD-DICATATION
+**/nerd-dictation/model_*/
+__pycache__/
+
+# FREETUBE
+**/FreeTube/*
+!**/FreeTube/*.db
+!**/FreeTube/Preferences

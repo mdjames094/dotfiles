@@ -1,0 +1,8 @@
+xterm*decTerminalID: vt340
+xterm*numColorRegisters: 256
+xterm*sixelScrolling: 1
+xterm*sixelScrollsRight: 1
+xterm*faceName: JetBrainsMono Nerd Font Regular 
+xterm*faceSize: 12
+xterm*renderFont: true
+xterm*loginshell: true

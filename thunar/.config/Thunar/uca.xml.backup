@@ -1,0 +1,77 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1463646694768306-1</unique-id>
+	<command>x-terminal-emulator -t &quot;Command Line&quot;</command>
+	<description>Use the command line</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>utilities-system-monitor</icon>
+	<name>Task Manager</name>
+	<unique-id>1462344044761047-1</unique-id>
+	<command>xfce4-taskmanager</command>
+	<description>Open the Task Manager</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/Papirus/48x48/apps/applets-screenshooter.svg</icon>
+	<name>Screenshot</name>
+	<unique-id>1521701634093267-1</unique-id>
+	<command>xfce4-screenshooter</command>
+	<description>Take a Screenshot</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/Papirus/48x48/apps/system-error.svg</icon>
+	<name>Open as Administrator</name>
+	<unique-id>1524278191778698-1</unique-id>
+	<command>pkexec thunar %f</command>
+	<description>Open as Administrator</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/Papirus/48x48/apps/com.github.donadigo.appeditor.svg</icon>
+	<name>Make file executable</name>
+	<unique-id>1521705348869052-4</unique-id>
+	<command>chmod +x %f</command>
+	<description>Make file executable</description>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/Papirus/48x48/apps/yast-snapper.svg</icon>
+	<name>Create backup copy</name>
+	<unique-id>1521705871805274-5</unique-id>
+	<command>cp --backup=t %f %f.backup</command>
+	<description>Create backup copy of a file</description>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/Papirus/48x48/apps/catfish.svg</icon>
+	<name>Search here...</name>
+	<unique-id>1521701676758699-2</unique-id>
+	<command>catfish --path=%f</command>
+	<description>Search for files within a folder</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>

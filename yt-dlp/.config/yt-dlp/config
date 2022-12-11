@@ -1,0 +1,12 @@
+# Force resume of partially downloaded files. Continue on download errors
+-ci
+
+# Video format 720p
+# -f 22/best
+-f "bv[height<=?720][fps<=?30][vcodec!=?vp9]+ba/b"
+
+# Output filename
+--restrict-filenames 
+--no-part
+-o '%(channel)s/%(playlist)s/%(playlist_index)03d_%(title)s.%(ext)s'
+ 
