@@ -49,9 +49,12 @@ alias ..='cd ..'
 alias v='vim'
 alias sv='sudoedit'
 
-alias dl='cd ~/Downloads'
-alias doc='cd ~/Documents'
-alias mrs='cd ~/Documents/Python/MRS'
+alias gl='cd ~/Downloads'
+alias gd='cd ~/Documents'
+alias gp='cd ~/Documents/Python'
+alias gm='cd ~/Documents/Python/MRS'
+alias gf='cd /media/freebox'
+alias gfv='cd /media/freebox/Vidéos'
 
 alias ydl="youtube-dl "
 

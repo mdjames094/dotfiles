@@ -348,6 +348,9 @@ vmap <S-Tab> <gv
 
 
 " Functions {{{
+" Select the font for the hardcopy
+set printfont=Courier:h8
+command! -range=% Hardcopypdf <line1>,<line2> hardcopy > %.ps | !ps2pdf %.ps && rm %.ps && lpr %.pdf && echo 'Printed %.pdf'
 
 function! NeatFoldText()
   let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '

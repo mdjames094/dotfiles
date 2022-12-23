@@ -141,6 +141,8 @@ map gh cd ~/
 map gd cd ~/Documents/
 map gl cd ~/Downloads/
 map gt cd ~/.local/share/Trash/files
+map gm cd /media/freebox
+map gv cd /media/freebox/Vidéos
 
 map zz push :z<space>
 
