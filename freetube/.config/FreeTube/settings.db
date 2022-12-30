@@ -12,7 +12,7 @@
 {"_id":"enableSearchSuggestions","value":false}
 {"_id":"expandSideBar","value":false}
 {"_id":"externalPlayer","value":"mpv"}
-{"_id":"externalPlayerCustomArgs","value":"--ytdl-format=bestvideo[height<=?1080][fps<=?30][vcodec!=?vp9]+bestaudio/best;--window-maximized=yes;--no-border"}
+{"_id":"externalPlayerCustomArgs","value":"--ytdl-format=bestvideo[height<=?1080][fps<=?30][vcodec!=?vp9]+bestaudio/best;--window-maximized=yes;--no-border;--force-window"}
 {"_id":"forceLocalBackendForLegacy","value":false}
 {"_id":"hideChannelSubscriptions","value":false}
 {"_id":"hideCommentLikes","value":true}
