@@ -31,3 +31,4 @@
 {"_id":"playNextVideo","value":false}
 {"_id":"useRssFeeds","value":true}
 {"_id":"useSponsorBlock","value":true}
+{"_id":"bounds","value":{"x":431,"y":219,"width":1600,"height":868,"maximized":true,"fullScreen":false}}

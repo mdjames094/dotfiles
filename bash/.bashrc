@@ -30,5 +30,5 @@ fi
 
 eval "$(zoxide init bash)"
 
-curl wttr.in/?format=3
+weather.sh
 echo

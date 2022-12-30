@@ -28,6 +28,9 @@ Plugin 'benmills/vimux'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'vimwiki/vimwiki'
 
+Plugin 'scrooloose/syntastic'
+Plugin 'dbeniamine/cheat.sh-vim'
+
 "Plugin 'valloric/youcompleteme'
 "Plugin 'vim-syntastic/syntastic'
 "Plugin 'scrooloose/nerdtree'
@@ -187,6 +190,9 @@ let g:mkdp_browser = ''
 
 let g:vimwiki_list = [{'path': '~/Documents/dotfiles/backup/Notes_wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0
+
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_shell_checkers = ['shellcheck']
 
 "}}}
 

@@ -65,3 +65,4 @@ alias wac='function _wac() { mapwacom.sh --device-regex="$1" --screen="$2"; unse
 alias wac1="wac stylus eDP-1"
 alias wac2="wac stylus HDMI2"
 
+alias cs='function _cs { [ -z "$2" ] && curl cheat.sh/$1 || curl cheat.sh/$1/$2; unset -f _cs; }; _cs'
