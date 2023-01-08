@@ -8,7 +8,7 @@ sudo apt purge firefox* libreoffice* thunderbird*  xfburn vlc
 ## 2.1. Apt
 ```
 sudo apt install git wget xclip wmctrl xdotool stow bleachbit tlp tlp-rdw tmux vim
-sudo apt install mpv yt-dlp pdftk redshift radiotray-ng flatpak markdown btop zoxide ripgrep entr trash-cli
+sudo apt install mpv yt-dlp pdftk redshift radiotray-ng flatpak markdown btop zoxide ripgrep entr trash-cli xcalib
 sudo apt install xfce4-netload-plugin xfce4-systemload-plugin xfce4-genmon-plugin
 ```
 
