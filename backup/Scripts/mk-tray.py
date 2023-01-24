@@ -7,7 +7,7 @@ import sys
 gi.require_version("Gtk", "3.0")
 gi.require_version("AppIndicator3", "0.1")
 gi.require_version('Notify', '0.7')
-from gi.repository import Gtk as gtk
+from gi.repository import Gtk as gtk, GLib as glib
 from gi.repository import AppIndicator3 as appindicator
 # from gi.repository import Notify as notify
 
@@ -28,6 +28,7 @@ LAUNCHERS = [
 ]
 
 APPINDICATOR_ID = 'mk-tray'
+
 
 class IconoTray:
     def __init__(self, appid, iconname):
@@ -56,11 +57,12 @@ class IconoTray:
         self.menu.append(item)
         self.menu.show_all()
 
+
     def shuffle(self, source):
         # current_label = source.get_label()
         # os.system("nerd-dictation end")
         self.kill()
-        os.system("mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --start=$((RANDOM%100)) --length=10% --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+        os.system("mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
         return
 
     def kill(self):
@@ -70,11 +72,17 @@ class IconoTray:
         self.kill()
         gtk.main_quit()
 
+
+def re_start(app):
+    app.shuffle(None)
+
+
 def main():
-    os.system("mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --start=$((RANDOM%100)) --length=10% --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+    os.system("mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
     app = IconoTray(APPINDICATOR_ID, "google-music-manager-panel")
     for launcher in LAUNCHERS:
         app.add_menu_item(**launcher)
+    glib.timeout_add(1000*60*10, re_start, app)
     gtk.main()
 
 if __name__ == "__main__":
