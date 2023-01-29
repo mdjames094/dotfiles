@@ -31,4 +31,6 @@
 {"_id":"playNextVideo","value":false}
 {"_id":"useRssFeeds","value":true}
 {"_id":"useSponsorBlock","value":true}
+{"_id":"checkForUpdates","value":true}
+{"_id":"checkForUpdates","value":false}
 {"_id":"bounds","value":{"x":0,"y":75,"width":1600,"height":825,"maximized":true,"fullScreen":false}}

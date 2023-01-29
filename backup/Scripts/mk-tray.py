@@ -11,6 +11,8 @@ from gi.repository import Gtk as gtk, GLib as glib
 from gi.repository import AppIndicator3 as appindicator
 # from gi.repository import Notify as notify
 
+PLAYLIST = "https://www.youtube.com/playlist?list=PL1eEkhVDbtH-v7eALPFQBpQhUIOW1oqEf"
+
 LAUNCHERS = [
     {
         "label": "Shuffle",
@@ -62,7 +64,7 @@ class IconoTray:
         # current_label = source.get_label()
         # os.system("nerd-dictation end")
         self.kill()
-        os.system("mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+        os.system("mpv " + PLAYLIST + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
         return
 
     def kill(self):
@@ -78,7 +80,7 @@ def re_start(app):
 
 
 def main():
-    os.system("mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+    os.system("mpv " + PLAYLIST + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
     app = IconoTray(APPINDICATOR_ID, "google-music-manager-panel")
     for launcher in LAUNCHERS:
         app.add_menu_item(**launcher)
