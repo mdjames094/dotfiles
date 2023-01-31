@@ -11,11 +11,30 @@ from gi.repository import Gtk as gtk, GLib as glib
 from gi.repository import AppIndicator3 as appindicator
 # from gi.repository import Notify as notify
 
-PLAYLIST = "https://www.youtube.com/playlist?list=PL1eEkhVDbtH-v7eALPFQBpQhUIOW1oqEf"
+Deep = "https://www.youtube.com/playlist?list=PL1eEkhVDbtH-v7eALPFQBpQhUIOW1oqEf"
+House = "https://www.youtube.com/watch?v=36YnV9STBqc"
+Chill = "https://www.youtube.com/watch?v=vvGTc3LJtVQ"
+Classic = "https://www.youtube.com/watch?v=trDnKzO-sQ8"
+
 
 LAUNCHERS = [
     {
-        "label": "Shuffle",
+        "label": "Deep",
+        "icon": "/usr/share/icons/Papirus-Dark/16x16/actions/media-playlist-shuffle.svg",
+        "command": "shuffle",
+    },
+    {
+        "label": "House",
+        "icon": "/usr/share/icons/Papirus-Dark/16x16/actions/media-playlist-shuffle.svg",
+        "command": "shuffle",
+    },
+    {
+        "label": "Chill",
+        "icon": "/usr/share/icons/Papirus-Dark/16x16/actions/media-playlist-shuffle.svg",
+        "command": "shuffle",
+    },
+    {
+        "label": "Classic",
         "icon": "/usr/share/icons/Papirus-Dark/16x16/actions/media-playlist-shuffle.svg",
         "command": "shuffle",
     },
@@ -61,10 +80,10 @@ class IconoTray:
 
 
     def shuffle(self, source):
-        # current_label = source.get_label()
-        # os.system("nerd-dictation end")
+        selected = source.get_label()
         self.kill()
-        os.system("mpv " + PLAYLIST + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+        os.system("mpv " + globals()[selected] + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+        self.ind.set_title(selected)
         return
 
     def kill(self):
@@ -80,7 +99,7 @@ def re_start(app):
 
 
 def main():
-    os.system("mpv " + PLAYLIST + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+    os.system("mpv " + Deep + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
     app = IconoTray(APPINDICATOR_ID, "google-music-manager-panel")
     for launcher in LAUNCHERS:
         app.add_menu_item(**launcher)
