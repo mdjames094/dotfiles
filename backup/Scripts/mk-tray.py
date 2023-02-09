@@ -15,7 +15,8 @@ Deep = "https://www.youtube.com/playlist?list=PL1eEkhVDbtH-v7eALPFQBpQhUIOW1oqEf
 House = "https://www.youtube.com/watch?v=36YnV9STBqc"
 Chill = "https://www.youtube.com/watch?v=vvGTc3LJtVQ"
 Classic = "https://www.youtube.com/watch?v=trDnKzO-sQ8"
-
+Productive = "https://www.youtube.com/watch?v=LVbUNRwpXzw"
+Limitless = "https://www.youtube.com/watch?v=4MFOBeUCPkw"
 
 LAUNCHERS = [
     {
@@ -39,6 +40,16 @@ LAUNCHERS = [
         "command": "shuffle",
     },
     {
+        "label": "Productive",
+        "icon": "/usr/share/icons/Papirus-Dark/16x16/actions/media-playlist-shuffle.svg",
+        "command": "shuffle",
+    },
+    {
+        "label": "Limitless",
+        "icon": "/usr/share/icons/Papirus-Dark/16x16/actions/media-playlist-shuffle.svg",
+        "command": "shuffle",
+    },
+    {
         "sep": True,
     },
     {
@@ -57,7 +68,7 @@ class IconoTray:
         self.ind = appindicator.Indicator.new(appid, iconname, appindicator.IndicatorCategory.APPLICATION_STATUS)
         self.ind.set_status (appindicator.IndicatorStatus.ACTIVE)
         self.ind.set_menu(self.menu)
-        self.ind.set_title('Music for work')
+        self.ind.set_title('Music for work\n:' + LAUNCHERS[0]['label'])
         # print(dir(self.ind))
         # notify.init(APPINDICATOR_ID)
         # notify.Notification.new(appid, "started", None).show()
@@ -75,6 +86,8 @@ class IconoTray:
             item.set_image(img)
         if command != None :
             item.connect("activate", getattr(self, command))
+        if label == LAUNCHERS[0]['label'] :
+            item.set_sensitive(False)
         self.menu.append(item)
         self.menu.show_all()
 
@@ -83,7 +96,9 @@ class IconoTray:
         selected = source.get_label()
         self.kill()
         os.system("mpv " + globals()[selected] + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
-        self.ind.set_title(selected)
+        for item in self.menu:
+            item.set_sensitive(item.get_label() != selected)
+        self.ind.set_title('Music for work\n:'+selected)
         return
 
     def kill(self):
@@ -99,7 +114,7 @@ def re_start(app):
 
 
 def main():
-    os.system("mpv " + Deep + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
+    os.system("mpv " + globals()[LAUNCHERS[0]['label']] + " --no-video --shuffle --start=$((RANDOM%100)) --audio-display=no --force-window=no --really-quiet >/dev/null 2>&1 &")
     app = IconoTray(APPINDICATOR_ID, "google-music-manager-panel")
     for launcher in LAUNCHERS:
         app.add_menu_item(**launcher)
