@@ -53,6 +53,14 @@ LAUNCHERS = [
         "sep": True,
     },
     {
+        "label": "Stop",
+        "icon": None,
+        "command": "kill",
+    },
+    {
+        "sep": True,
+    },
+    {
         "label": "Exit",
         "icon": None,
         "command": "quit",
@@ -101,8 +109,11 @@ class IconoTray:
         self.ind.set_title('Music for work\n:'+selected)
         return
 
-    def kill(self):
+    def kill(self, source=None):
         os.system("if [ '$(ps -o ppid= -C mpv)' ]; then ps -ef | awk '/[-]-no-video/{print $2}' | xargs kill -9 >/dev/null 2>&1; fi")
+        for item in self.menu:
+            item.set_sensitive(True)
+
 
     def quit(self, source):
         self.kill()
