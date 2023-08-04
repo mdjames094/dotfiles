@@ -14,6 +14,8 @@ alias psa='ps -aux'
 
 alias ren="rename 's/ /_/g' * "
 
+alias gitup='git status && git add . && git commit -m "$(date)" && git push -u origin main'
+
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 alias distup='sudo apt dist-upgrade'
