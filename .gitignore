@@ -16,3 +16,6 @@ __pycache__/
 **/FreeTube/*
 !**/FreeTube/*.db
 !**/FreeTube/Preferences
+
+# MPV
+**/mpv/watch_later/*
