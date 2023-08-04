@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#if [[ $# -eq 0 ]] 
+#  then
+#    echo 'syntax: merge_mp4.sh <folder>'
+#    exit 1
+#  else
+#    cd ${1}
+#    current_dir=$(pwd)
+#    echo -e "\nMerging video files from ${current_dir}"
+#fi
+
 set -euo pipefail
 IFS=$'\n\t'
 
@@ -41,7 +51,7 @@ fi
 echo -n "Generating file lists "
 find . -maxdepth 2 -type f | egrep "\.(mp4|mkv)$" |
     sed -e 's|^./||' |
-    tee "${file_list}" |
+    tee "${file_list}" | 
     awk "{printf \"file '${current_dir}/%s'\n\", \$0}" > "${input_list}"
 echo "..........[ DONE ]"  
 

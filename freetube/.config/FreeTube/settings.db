@@ -3,7 +3,7 @@
 {"_id":"backendPreference","value":"local"}
 {"_id":"barColor","value":false}
 {"_id":"baseTheme","value":"dark"}
-{"_id":"bounds","value":{"x":2,"y":75,"width":1600,"height":825,"maximized":false,"fullScreen":false}}
+{"_id":"bounds","value":{"x":27,"y":75,"width":1600,"height":825,"maximized":true,"fullScreen":false}}
 {"_id":"checkForBlogPosts","value":false}
 {"_id":"checkForUpdates","value":false}
 {"_id":"defaultInvidiousInstance","value":""}
@@ -12,7 +12,8 @@
 {"_id":"enableSearchSuggestions","value":false}
 {"_id":"expandSideBar","value":false}
 {"_id":"externalPlayer","value":"mpv"}
-{"_id":"externalPlayerCustomArgs","value":"--ytdl-format=bestvideo[height<=?720][fps<=?30][vcodec!=?vp9]+bestaudio/best;--window-maximized=yes;--no-border;--force-window"}
+{"_id":"externalPlayerCustomArgs","value":"--ytdl-format=bestvideo[height<=?1080][fps<=?30][vcodec=none]+bestaudio/best;--window-maximized=yes;--no-border;--force-window"}
+{"_id":"fetchSubscriptionsAutomatically","value":true}
 {"_id":"forceLocalBackendForLegacy","value":false}
 {"_id":"hideChannelSubscriptions","value":false}
 {"_id":"hideCommentLikes","value":true}
@@ -31,4 +32,5 @@
 {"_id":"playNextVideo","value":false}
 {"_id":"useRssFeeds","value":true}
 {"_id":"useSponsorBlock","value":true}
-{"_id":"bounds","value":{"x":2,"y":75,"width":1200,"height":800,"maximized":true,"fullScreen":false}}
+{"_id":"videoVolumeMouseScroll","value":true}
+{"_id":"bounds","value":{"x":27,"y":75,"width":1600,"height":825,"maximized":true,"fullScreen":false}}

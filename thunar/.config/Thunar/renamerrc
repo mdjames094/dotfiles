@@ -8,6 +8,12 @@ EndOffset=4
 EndOffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
 StartOffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
 
+[ThunarSbrInsertRenamer]
+Offset=0
+Text=z
+Mode=THUNAR_SBR_INSERT_MODE_INSERT
+OffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
+
 [ThunarSbrReplaceRenamer]
 CaseSensitive=FALSE
 Replacement=_

@@ -22,3 +22,4 @@
         * [start_detach_app_fromshell](start_detach_app_fromshell)
         * [kvm_setup](kvm_setup)
         * [kvm_single gpu passthrough](kvm_single-gpu-passthrough)
+        * [conda_env](conda_env)

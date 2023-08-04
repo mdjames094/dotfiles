@@ -24,7 +24,7 @@ alias fins='flatpak install'
 alias fpur='flatpak uninstall --delete-data -y'
 alias fclean='flatpak uninstall --unused -y'
 
-alias sysup='update && upgrade && fupdate'
+alias sysup='update && upgrade && sysclean && fupdate && ytup'
 alias sysins='sudo apt install'
 alias syspur='sudo apt purge'
 alias sysclean='sudo apt autoremove && sudo apt clean'
@@ -43,6 +43,7 @@ alias tka='tmux kill-session -a && tmux kill-session'
 
 alias ca='conda activate'
 alias cad='conda deactivate'
+alias crm='conda env remove --all -y -n '
 alias jn='jupyter notebook'
 
 alias q='doc; cd Python/ticker; ~/anaconda3/envs/mrs/bin/python ticker_async_bash.py '
@@ -60,7 +61,8 @@ alias gm='cd ~/Documents/Python/MRS'
 alias gf='cd /media/freebox'
 alias gfv='cd /media/freebox/Vidéos'
 
-alias ydl="youtube-dl "
+alias ydl='youtube-dl '
+alias ytup='sudo yt-dlp --update-to nightly'
 
 #alias ctc='cat $1 | xclip -selection clipboard'
 alias ctc="xclip -selection clipboard -i < $2"
@@ -73,3 +75,4 @@ alias cs='function _cs { [ -z "$2" ] && curl cheat.sh/$1 || curl cheat.sh/$1/$2;
 
 alias mk='mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --audio-display=no --force-window=no --really-quiet'
 
+alias nvim='~/Applications/Neovim/nvim.appimage '

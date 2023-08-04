@@ -17,8 +17,8 @@ if [ ! -z "$INFO" ]; then
   # echo $INFO
   IFS=, read -r IP CITY REGION COUNTRY LAT LON POSTAL TIMEZ <<< "$INFO"
 else
-  LAT=48.7927
-  LON=2.4657
+  LAT=48.783619
+  LON=2.442819
 fi
 
 APIKEY="65516a9d206dcb56f4ea13de7f46eaf2"
