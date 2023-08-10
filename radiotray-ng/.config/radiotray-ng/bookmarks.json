@@ -1,283 +1,300 @@
 [
-   {
-      "group" : "France",
-      "stations" : [
-         {
-            "name": "France Info",
-            "url": "http://direct.franceinfo.fr/live/franceinfo-midfi.mp3"
-         },
-         {
-            "name": "Rire & Chansons",
-            "url": "http://cdn.nrjaudio.fm/audio1/fr/30401/mp3_128.mp3?origine=fluxradios"
-         },
-         {  "name": "RTL", 
-            "url": "http://streaming.Radio.rtl.fr/rtl-1-44-128" 
-         }, 
-         {  "name": "RMC", 
-            "url": "http://​rmc.bfmtv.com/rmcinfo-mp3" 
-         },
-         {
-            "name": "Europe 1",
-            "url": "https://ais-live.cloud-services.paris/europe1.mp3?aw_0_1st.playerid=lagardereWebE1"
-         },
-         {
-            "name": "Fun Radio",
-            "url": "http://streaming.Radio.funRadio.fr/fun-1-44-128"
-         },
-         {
-            "name": "MFM",
-            "url": "http://mfm.ice.infomaniak.ch/mfm-128.mp3"
-         },
-         {
-            "name": "Nostalgie",
-            "url": "http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3"
-         },
-         {
-            "name": "NRJ",
-            "url": "http://cdn.nrjaudio.fm/audio1/fr/30001/mp3_128.mp3"
-         },
-         {
-            "name": "RFM",
-            "url": "https://ais-live.cloud-services.paris:8443/rfm.aac"
-         },
-         {
-            "name": "RTL2",
-            "url": "http://streaming.Radio.rtl2.fr/rtl2-1-44-128"
-         },
-         {
-            "name": "Skyrock",
-            "url": "http://icecast.skyrock.net/s/natio_mp3_128k"
-         },
-         {
-            "name": "Sud Radio",
-            "url": "https://live.sudradio.fr/sudradio-mp3-128"
-         },
-         {
-            "name": "Frequence 3",
-            "url": "http://ice.stream.frequence3.net/frequence3-128.mp3"
-         },
-         {
-            "name": "Size Radio",
-            "url": "http://stream.Radiojar.com/atr1e8aswa5tv.mp3"
-         },
-         {
-            "name": "The Current",
-            "url": "http://current.stream.publicRadio.org/kcmp.mp3"
-         },
-         {
-            "name": "Topmusic",
-            "url": "http://players.creacast.com/creacast/topmusic/playlist.m3u"
-         },
-         {
-            "name": "Wit FM",
-            "url": "https://start-witfm.ice.infomaniak.ch/start-witfm-high.mp3"
-         },
-         {
-            "name": "France Inter",
-            "url": "https://icecast.radiofrance.fr/franceinter-hifi.aac"
-         },
-         {
-            "name": "France Culture",
-            "url": "https://icecast.radiofrance.fr/franceculture-hifi.aac"
-         }
-      ]
-   },
-   {
-      "group" : "Jazz",
-      "stations" : [
-         {
-            "name" : "Smooth Jazz",
-            "url" : "http://smoothjazz.com/streams/smoothjazz_128.pls"
-         },
-         {
-            "name" : "Sonic Universe",
-            "url" : "http://somafm.com/sonicuniverse.pls"
-         }
-      ]
-   },
-   {
-      "group" : "Latin",
-      "stations" : [
-         {
-            "name" : "Top Latino Radio",
-            "url" : "http://online.radiodifusion.net:8020/listen.pls"
-         },
-         {
-            "name" : "Reggaeton 24/7",
-            "url" : "http://cc.net2streams.com/tunein.php/reggaeton/playlist.pls"
-         }
-      ]
-   },
-   {
-      "group" : "Classic Rock",
-      "stations" : [
-         {
-            "name" : "181.FM Classic Hits",
-            "url" : "http://www.181.fm/winamp.pls?station=181-greatoldies&file=181-greatoldies.pls"
-         },
-         {
-            "name" : ".977 Classic Rock",
-            "url" : "http://www.977music.com/tunein/web/classicrock.asx"
-         },
-         {
-            "name" : "Covers",
-            "url" : "http://somafm.com/covers.pls"
-         }
-      ]
-   },
-   {
-      "group" : "Classical",
-      "stations" : [
-         {
-            "name" : "KDFC",
-            "url" : "http://provisioning.streamtheworld.com/pls/KDFCFM.pls"
-         },
-         {
-            "name" : "Classic FM",
-            "url" : "http://media-ice.musicradio.com/ClassicFMMP3.m3u"
-         },
-         {
-            "name" : "WCPE",
-            "url" : "http://www.ibiblio.org/wcpe/wcpe.pls"
-         },
-         {
-            "name" : "CINEMIX",
-            "url" : "http://cinemix.us/cine.asx"
-         },
-         {
-            "name" : "WQXR",
-            "url" : "http://www.wqxr.org/stream/wqxr/mp3.pls"
-         },
-         {
-            "name" : "BBC Radio 3",
-            "url" : "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p"
-         }
-      ]
-   },
-   {
-      "group" : "Pop / Rock",
-      "stations" : [
-         {
-            "name" : "Radio Paradise",
-            "url" : "http://www.radioparadise.com/musiclinks/rp_128.m3u"
-         },
-         {
-            "name" : ".977 The Hitz Channel",
-            "url" : "http://www.977music.com/tunein/web/hitz.asx"
-         },
-         {
-            "name" : "Indie Pop Rocks!",
-            "url" : "http://somafm.com/indiepop.pls"
-         },
-         {
-            "name" : "PopTron",
-            "url" : "http://somafm.com/poptron.pls"
-         }
-      ]
-   },
-   {
-      "group" : "Oldies",
-      "stations" : [
-         {
-            "name" : "ABN Antioch OTR",
-            "url" : "http://radio.macinmind.com/listen.m3u"
-         },
-         {
-            "name" : "AM600 Conyers OTR",
-            "url" : "http://www.conyersradio.net/listen.m3u"
-         },
-         {
-            "name" : "Rumsey Retro Radio",
-            "url" : "https://www.rumseyretro.ca/ewExternalFiles/rumseyretro.pls"
-         },
-         {
-            "name" : "WNAR-AM Radio",
-            "url" : "http://live.wnar-am.com:8500/listen.pls"
-         }
-      ]
-   },
-   {
-      "group" : "Chill",
-      "stations" : [
-         {
-            "name" : "Lounge Radio",
-            "url" : "http://www.lounge-radio.com/listen128.m3u"
-         },
-         {
-            "name" : "Beat Blender",
-            "url" : "http://somafm.com/beatblender.pls"
-         },
-         {
-            "name" : "Secret Agent",
-            "url" : "http://somafm.com/secretagent.pls"
-         },
-         {
-            "name" : "Groove Salad",
-            "url" : "http://somafm.com/groovesalad.pls"
-         },
-         {
-            "name" : "Illinois Street Lounge",
-            "url" : "http://somafm.com/illstreet.pls"
-         }
-      ]
-   },
-   {
-      "group" : "Country",
-      "stations" : [
-         {
-            "name" : "Boot Liquor",
-            "url" : "http://somafm.com/bootliquor.pls"
-         },
-         {
-            "name" : "Highway 181",
-            "url" : "http://www.181.fm/winamp.pls?station=181-highway&file=181-highway.pls"
-         },
-         {
-            "name" : "Country 108",
-            "url" : "http://www.country108.com/listen.pls"
-         },
-         {
-            "name" : "WAMU Bluegrass Country",
-            "url" : "http://ice24.securenetsystems.net/WAMU2"
-         }
-      ]
-   },
-   {
-      "group" : "Techno / Electronic",
-      "stations" : [
-         {
-            "name" : "Drone Zone",
-            "url" : "http://somafm.com/dronezone.pls"
-         },
-         {
-            "name" : "Space Station Soma",
-            "url" : "http://somafm.com/spacestation.pls"
-         },
-         {
-            "name" : "cliqhop idm",
-            "url" : "http://somafm.com/cliqhop.pls"
-         },
-         {
-            "name" : "Black Rock FM",
-            "url" : "http://somafm.com/brfm.pls"
-         },
-         {
-            "name" : "New Dance Radio",
-            "url" : "http://jbstream.net/tunein.php/blackoutworm/playlist.asx"
-         },
-         {
-            "name" : "DubStep Beyond",
-            "url" : "http://somafm.com/play/dubstep32"
-         }
-      ]
-   },
-   {
-      "group" : "Community",
-      "stations" : [
-         {
-            "name" : "Jupiter Broadcasting",
-            "url" : "http://jblive.stream/"
-         }
-      ]
-   }
+	{
+		"group" : "France",
+		"stations" : 
+		[
+			{
+				"name" : "France Info",
+				"url" : "http://direct.franceinfo.fr/live/franceinfo-midfi.mp3"
+			},
+			{
+				"name" : "Rire & Chansons",
+				"url" : "http://cdn.nrjaudio.fm/audio1/fr/30401/mp3_128.mp3?origine=fluxradios"
+			},
+			{
+				"name" : "RTL",
+				"url" : "http://streaming.Radio.rtl.fr/rtl-1-44-128"
+			},
+			{
+				"name" : "RMC",
+				"url" : "http://\u200brmc.bfmtv.com/rmcinfo-mp3"
+			},
+			{
+				"name" : "Europe 1",
+				"url" : "https://ais-live.cloud-services.paris/europe1.mp3?aw_0_1st.playerid=lagardereWebE1"
+			},
+			{
+				"name" : "Fun Radio",
+				"url" : "http://streaming.Radio.funRadio.fr/fun-1-44-128"
+			},
+			{
+				"name" : "MFM",
+				"url" : "http://mfm.ice.infomaniak.ch/mfm-128.mp3"
+			},
+			{
+				"name" : "Nostalgie",
+				"url" : "http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3"
+			},
+			{
+				"name" : "NRJ",
+				"url" : "http://cdn.nrjaudio.fm/audio1/fr/30001/mp3_128.mp3"
+			},
+			{
+				"name" : "RFM",
+				"url" : "https://ais-live.cloud-services.paris:8443/rfm.aac"
+			},
+			{
+				"name" : "RTL2",
+				"url" : "http://streaming.Radio.rtl2.fr/rtl2-1-44-128"
+			},
+			{
+				"name" : "Skyrock",
+				"url" : "http://icecast.skyrock.net/s/natio_mp3_128k"
+			},
+			{
+				"name" : "Sud Radio",
+				"url" : "https://live.sudradio.fr/sudradio-mp3-128"
+			},
+			{
+				"name" : "Frequence 3",
+				"url" : "http://ice.stream.frequence3.net/frequence3-128.mp3"
+			},
+			{
+				"name" : "Size Radio",
+				"url" : "http://stream.Radiojar.com/atr1e8aswa5tv.mp3"
+			},
+			{
+				"name" : "The Current",
+				"url" : "http://current.stream.publicRadio.org/kcmp.mp3"
+			},
+			{
+				"name" : "Topmusic",
+				"url" : "http://players.creacast.com/creacast/topmusic/playlist.m3u"
+			},
+			{
+				"name" : "Wit FM",
+				"url" : "https://start-witfm.ice.infomaniak.ch/start-witfm-high.mp3"
+			},
+			{
+				"name" : "France Inter",
+				"url" : "https://icecast.radiofrance.fr/franceinter-hifi.aac"
+			},
+			{
+				"name" : "France Culture",
+				"url" : "https://icecast.radiofrance.fr/franceculture-hifi.aac"
+			}
+		]
+	},
+	{
+		"group" : "Jazz",
+		"stations" : 
+		[
+			{
+				"name" : "Smooth Jazz",
+				"url" : "http://smoothjazz.com/streams/smoothjazz_128.pls"
+			},
+			{
+				"name" : "Sonic Universe",
+				"url" : "http://somafm.com/sonicuniverse.pls"
+			}
+		]
+	},
+	{
+		"group" : "Latin",
+		"stations" : 
+		[
+			{
+				"name" : "Top Latino Radio",
+				"url" : "http://online.radiodifusion.net:8020/listen.pls"
+			},
+			{
+				"name" : "Reggaeton 24/7",
+				"url" : "http://cc.net2streams.com/tunein.php/reggaeton/playlist.pls"
+			}
+		]
+	},
+	{
+		"group" : "Classic Rock",
+		"stations" : 
+		[
+			{
+				"name" : "181.FM Classic Hits",
+				"url" : "http://www.181.fm/winamp.pls?station=181-greatoldies&file=181-greatoldies.pls"
+			},
+			{
+				"name" : ".977 Classic Rock",
+				"url" : "http://www.977music.com/tunein/web/classicrock.asx"
+			},
+			{
+				"name" : "Covers",
+				"url" : "http://somafm.com/covers.pls"
+			}
+		]
+	},
+	{
+		"group" : "Classical",
+		"stations" : 
+		[
+			{
+				"name" : "KDFC",
+				"url" : "http://provisioning.streamtheworld.com/pls/KDFCFM.pls"
+			},
+			{
+				"name" : "Classic FM",
+				"url" : "http://media-ice.musicradio.com/ClassicFMMP3.m3u"
+			},
+			{
+				"name" : "WCPE",
+				"url" : "http://www.ibiblio.org/wcpe/wcpe.pls"
+			},
+			{
+				"name" : "CINEMIX",
+				"url" : "http://cinemix.us/cine.asx"
+			},
+			{
+				"name" : "WQXR",
+				"url" : "http://www.wqxr.org/stream/wqxr/mp3.pls"
+			},
+			{
+				"name" : "BBC Radio 3",
+				"url" : "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p"
+			}
+		]
+	},
+	{
+		"group" : "Pop / Rock",
+		"stations" : 
+		[
+			{
+				"name" : "Radio Paradise",
+				"url" : "http://www.radioparadise.com/musiclinks/rp_128.m3u"
+			},
+			{
+				"name" : ".977 The Hitz Channel",
+				"url" : "http://www.977music.com/tunein/web/hitz.asx"
+			},
+			{
+				"name" : "Indie Pop Rocks!",
+				"url" : "http://somafm.com/indiepop.pls"
+			},
+			{
+				"name" : "PopTron",
+				"url" : "http://somafm.com/poptron.pls"
+			}
+		]
+	},
+	{
+		"group" : "Oldies",
+		"stations" : 
+		[
+			{
+				"name" : "ABN Antioch OTR",
+				"url" : "http://radio.macinmind.com/listen.m3u"
+			},
+			{
+				"name" : "AM600 Conyers OTR",
+				"url" : "http://www.conyersradio.net/listen.m3u"
+			},
+			{
+				"name" : "Rumsey Retro Radio",
+				"url" : "https://www.rumseyretro.ca/ewExternalFiles/rumseyretro.pls"
+			},
+			{
+				"name" : "WNAR-AM Radio",
+				"url" : "http://live.wnar-am.com:8500/listen.pls"
+			}
+		]
+	},
+	{
+		"group" : "Chill",
+		"stations" : 
+		[
+			{
+				"name" : "Lounge Radio",
+				"url" : "http://www.lounge-radio.com/listen128.m3u"
+			},
+			{
+				"name" : "Beat Blender",
+				"url" : "http://somafm.com/beatblender.pls"
+			},
+			{
+				"name" : "Secret Agent",
+				"url" : "http://somafm.com/secretagent.pls"
+			},
+			{
+				"name" : "Groove Salad",
+				"url" : "http://somafm.com/groovesalad.pls"
+			},
+			{
+				"name" : "Illinois Street Lounge",
+				"url" : "http://somafm.com/illstreet.pls"
+			}
+		]
+	},
+	{
+		"group" : "Country",
+		"stations" : 
+		[
+			{
+				"name" : "Boot Liquor",
+				"url" : "http://somafm.com/bootliquor.pls"
+			},
+			{
+				"name" : "Highway 181",
+				"url" : "http://www.181.fm/winamp.pls?station=181-highway&file=181-highway.pls"
+			},
+			{
+				"name" : "Country 108",
+				"url" : "http://www.country108.com/listen.pls"
+			},
+			{
+				"name" : "WAMU Bluegrass Country",
+				"url" : "http://ice24.securenetsystems.net/WAMU2"
+			}
+		]
+	},
+	{
+		"group" : "Techno / Electronic",
+		"stations" : 
+		[
+			{
+				"name" : "Drone Zone",
+				"url" : "http://somafm.com/dronezone.pls"
+			},
+			{
+				"name" : "Space Station Soma",
+				"url" : "http://somafm.com/spacestation.pls"
+			},
+			{
+				"name" : "cliqhop idm",
+				"url" : "http://somafm.com/cliqhop.pls"
+			},
+			{
+				"name" : "Black Rock FM",
+				"url" : "http://somafm.com/brfm.pls"
+			},
+			{
+				"name" : "New Dance Radio",
+				"url" : "http://jbstream.net/tunein.php/blackoutworm/playlist.asx"
+			},
+			{
+				"name" : "DubStep Beyond",
+				"url" : "http://somafm.com/play/dubstep32"
+			}
+		]
+	},
+	{
+		"group" : "Community",
+		"stations" : 
+		[
+			{
+				"name" : "Jupiter Broadcasting",
+				"url" : "http://jblive.stream/"
+			}
+		]
+	},
+	{
+		"group" : "root",
+		"stations" : []
+	}
 ]
