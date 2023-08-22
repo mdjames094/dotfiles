@@ -14,7 +14,7 @@ alias psa='ps -aux'
 
 alias ren="rename 's/ /_/g' * "
 
-alias gitup='git status && git add . && git commit -m "$(date)" && git push -u origin main'
+alias gup='git status && git add . && git commit -m "$(date)" && git push -u origin main'
 
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
@@ -26,7 +26,7 @@ alias fins='flatpak install'
 alias fpur='flatpak uninstall --delete-data -y'
 alias fclean='flatpak uninstall --unused -y'
 
-alias sysup='update && upgrade && sysclean && fupdate && ytup'
+alias sysup='update && upgrade && sysclean && fupdate && fclean && ytup'
 alias sysins='sudo apt install'
 alias syspur='sudo apt purge'
 alias sysclean='sudo apt autoremove && sudo apt clean'
