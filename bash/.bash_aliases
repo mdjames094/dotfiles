@@ -29,7 +29,7 @@ alias fclean='flatpak uninstall --unused -y'
 alias sysup='update && upgrade && sysclean && fupdate && fclean && ytup'
 alias sysins='sudo apt install'
 alias syspur='sudo apt purge'
-alias sysclean='sudo apt autoremove && sudo apt clean'
+alias sysclean='sudo apt -y autoremove && sudo apt -y clean'
 
 alias cls='printf "\033c"'
 
@@ -68,6 +68,8 @@ alias ytup='sudo yt-dlp --update-to nightly'
 
 #alias ctc='cat $1 | xclip -selection clipboard'
 alias ctc="xclip -selection clipboard -i < $2"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 alias wac='function _wac() { mapwacom.sh --device-regex="$1" --screen="$2"; unset -f _wac; }; _wac'
 alias wac1="wac stylus eDP-1"
@@ -78,3 +80,13 @@ alias cs='function _cs { [ -z "$2" ] && curl cheat.sh/$1 || curl cheat.sh/$1/$2;
 alias mk='mpv https://www.youtube.com/playlist?list=PLdE7uo_7KBkc6L7Bgqzz_Q7q2JN2AqHV3 --no-video --shuffle --audio-display=no --force-window=no --really-quiet'
 
 alias nvim='~/Applications/Neovim/nvim.appimage '
+
+alias rmk='ssh rmk'
+alias rmv='ca rmk && rmview ~/.config/rmview/rmview.json && cad'
+alias rmy='ca rmk && remy && cad'
+alias oxf='oxide_off.sh &'
+alias oxo='oxide_on.sh'
+alias ppf='pipes_off.sh'
+alias ppo='pipes_on.sh'
+alias scp='scp -oHostKeyAlgorithms=+ssh-rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+

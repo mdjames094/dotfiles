@@ -1,0 +1,77 @@
+colorscheme industry
+
+syntax enable
+highlight Normal ctermbg=black
+set nu
+set nowrap
+set splitbelow
+set encoding=utf-8
+set path+=.,,**        " Seach down into subfolders. Provides tab-completion for all file-related tasks
+set showcmd            " Show command in bottom bar
+set wildmenu           " Visual autocomplete for command menu
+set lazyredraw         " Redraw only when we need to
+set showmatch          " Show matching part if the pairs for [] {} and ()
+set ruler              " Show cursor x, y coordinates
+set cursorline         " Show cursorline
+set foldenable         " Enable folding
+set showmatch          " Show matching part if the pairs for [] {} and ()
+set showmode
+set backspace=indent,eol,start
+set scrolloff=7        " 999 to keep cursor line in middle of screen
+set expandtab          " Prefer spaces over tabs
+set shiftwidth=2       " Indentation defaults (<< / >> / == / auto)
+set shiftround         " Snap indents via > or < to multiples of sw
+
+set noswapfile
+set backup
+set nowritebackup
+
+set backupdir=/tmp
+
+au FileType javascript,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent smartindent
+
+au FileType vim setlocal foldmethod=marker
+
+au FileType py setlocal foldmethod=indent
+
+" avoid extraneous whitespace
+au BufWritePre *.{php,py,c,h,js,txt,hs,java,md} :call <SID>StripTrailingWhitespaces()
+
+" Set status line display
+set laststatus=2
+
+" Always display the tabline, even if there is only one tab
+set showtabline=2
+
+" Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set noshowmode
+
+set encoding=utf8
+
+" set timeoutlen=150
+
+" make y and p copy and paste to the global buffer used by other apps
+set clipboard+=unnamed
+
+" allow buffer change without saving
+set hidden
+
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction

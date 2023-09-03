@@ -1,0 +1,11 @@
+[Unit]
+Description=pipes-and-rust
+After=home.mount
+
+[Service]
+ExecStart=/opt/pipes-and-rust
+Restart=never
+Environment="PORT=80"
+
+[Install]
+WantedBy=multi-user.target

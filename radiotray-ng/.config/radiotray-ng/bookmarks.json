@@ -86,6 +86,28 @@
 		]
 	},
 	{
+		"group" : "News",
+		"stations" : 
+		[
+			{
+				"name" : "MSNBC",
+				"url" : "https://tunein.streamguys1.com/msnbc-tesla"
+			},
+			{
+				"name" : "NBC News Radio",
+				"url" : "http://n28b-e2.revma.ihrhls.com/zc6043?rj-ttl=5&rj-tok=AAABiiVxnW0Ad6R2B5CJqudBAg"
+			},
+			{
+				"name" : "CNN International",
+				"url" : "http://tunein2-sjc.streamguys1.com/CNNi"
+			},
+			{
+				"name" : "Euronews",
+				"url" : "http://podcasts.euronewsradio.com/media/podcast/EuronewsFR-News.mp3"
+			}
+		]
+	},
+	{
 		"group" : "Jazz",
 		"stations" : 
 		[
@@ -96,6 +118,14 @@
 			{
 				"name" : "Sonic Universe",
 				"url" : "http://somafm.com/sonicuniverse.pls"
+			},
+			{
+				"name" : "Soul Radio Classics",
+				"url" : "https://listen.soulradio.us/us"
+			},
+			{
+				"name" : "Jazz Radio Soul",
+				"url" : "http://jazz-wr10.ice.infomaniak.ch/jazz-wr10-128.mp3"
 			}
 		]
 	},
